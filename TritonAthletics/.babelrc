@@ -1,5 +1,5 @@
 {
   "presets": ["react-native"],
   "plugins": [],
-  sourceMaps = true
+  "sourceMaps" : true
 }

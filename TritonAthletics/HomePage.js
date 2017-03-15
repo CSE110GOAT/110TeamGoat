@@ -11,16 +11,14 @@ import {
   TouchableHighlight,
   Navigator
 } from 'react-native';
-import Pages from './Pages.js'
 
-export default class TritonAthletics extends Component {
-  constructor() {
+export default class HomePage extends Component {
+  constructor(){
     super()
   }
+
+
   render() {
-    return (
-      <Pages/>
-    );
+      return null;
   }
 }
-AppRegistry.registerComponent('TritonAthletics', () => TritonAthletics);
