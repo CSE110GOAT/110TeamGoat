@@ -17,17 +17,17 @@ export default class Header extends Component{
     }
     render(){
     return (
-      <View style = {styles.container} >
+      <View style={styles.container}>
         <Image source={require('./header.png')} style={styles.header_image}/>
       </View>
-      );
+      ); 
     }
   }
 
 const styles = StyleSheet.create({
   container:{
     borderBottomColor:'black',
-    borderBottomWidth:1
+    borderBottomWidth:0
   },
   title: {
     justifyContent: 'center',
