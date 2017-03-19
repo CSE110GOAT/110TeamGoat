@@ -49,7 +49,7 @@ export default class SportGames extends Component {
            }
 
            this.setState({
-             games: game 
+             games: game
            })
 
          }).catch((error) => {
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingBottom: 50
   },
-  
+
   container: {
     backgroundColor: 'white',
     borderColor: 'grey',
@@ -100,6 +100,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily:"HelveticaNeue-CondensedBold",
+
   }
 
 });

@@ -26,8 +26,8 @@ export default class Sport extends Component {
     super(props)
     var nostats = ['2', '3', '5', '7', '9', '13', '14', '15', '18', '20'];
     var twotab = false;
-    if ( props.string == "2" || props.string == "3" || props.string == "5" || 
-    props.string == "7" || props.string == "9" || props.string == "13" || 
+    if ( props.string == "2" || props.string == "3" || props.string == "5" ||
+    props.string == "7" || props.string == "9" || props.string == "13" ||
     props.string == "14" || props.string == "15" || props.string == "18" |
     props.string == "20" ) {
         twotab = true;
@@ -109,7 +109,7 @@ export default class Sport extends Component {
     this.props.navigator.pop({
       id: this.props.gender
     })
-  } 
+  }
 getSlider() {
   return (
 <TabViewAnimated
@@ -142,9 +142,9 @@ getSlider() {
           <View style = {styles.head}>
             <Text style = {styles.title}> {this.props.name} </Text>
           </View>
-      </View> 
+      </View>
 
-      {this.getSlider()}       
+      {this.getSlider()}
 
       </View>
     );
@@ -166,8 +166,9 @@ const styles = StyleSheet.create({
   title: {
     justifyContent: 'center',
     textAlign: 'center',
-    color: 'black',
+    color: 'navy',
     fontSize: 34,
+    fontFamily:'HelveticaNeue-CondensedBold'
 
   },
   topBar: {

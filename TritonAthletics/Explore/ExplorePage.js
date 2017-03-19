@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     textAlign: 'center',
+    fontFamily: 'HelveticaNeue-CondensedBold'
   },
 });
 
