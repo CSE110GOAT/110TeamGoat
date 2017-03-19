@@ -18,6 +18,7 @@ import {
   Navigator
 } from 'react-native';
 
+import Game from './Game'
 import MyScene from './MyScene'
 import GamePreview from './GamePreview'
 import Header from '../Header'
