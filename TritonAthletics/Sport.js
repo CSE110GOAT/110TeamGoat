@@ -22,15 +22,36 @@ import Stats from './Stats';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Sport extends Component {
- state = {
-    index: 0,
-    sport: this.props.stats,
-    routes: [
-      { key: '1', title: 'GAMES' },
-      { key: '2', title: 'ROSTER' },
-      { key: '3', title: 'STATS' },
-    ],
-  };
+  constructor(props) {
+    super(props)
+    var nostats = ['2', '3', '5', '7', '9', '13', '14', '15', '18', '20'];
+    var twotab = false;
+    if ( props.string == "2" || props.string == "3" || props.string == "5" || 
+    props.string == "7" || props.string == "9" || props.string == "13" || 
+    props.string == "14" || props.string == "15" || props.string == "18" |
+    props.string == "20" ) {
+        twotab = true;
+    }
+    if (twotab) {
+      this.state = {
+        index: 0,
+        routes: [
+          { key: '1', title: 'GAMES' },
+          { key: '2', title: 'ROSTER' },
+        ]
+      }
+    }
+    else {
+      this.state = {
+        index: 0,
+        routes: [
+        { key: '1', title: 'GAMES' },
+        { key: '2', title: 'ROSTER' },
+        { key: '3', title: 'STATS' },
+        ]
+      }
+    }
+  }
 
   _handleChangeTab = (index) => {
     this.setState({ index });
@@ -43,38 +64,6 @@ export default class Sport extends Component {
       tabStyle = {styles.tab}
     />;
   };
-
-  findSport() {
-    switch(this.state.id) {
-      case 0:
-        return "http://www.ucsdtritons.com/fls/5800/stats/baseball/2017/teamstat.htm?DB_OEM_ID=5800" ;
-      case 1:
-        return "http://www.ucsdtritons.com/fls/5800/stats/mbasketball/2016-17/teamstat.htm?DB_OEM_ID=5800";
-      case 4:
-        return "http://www.ucsdtritons.com/fls/5800/stats/mgolf/2016-17/teamstat.htm?DB_OEM_ID=5800";
-      case 6:
-        return "http://www.ucsdtritons.com/fls/5800/stats/msoccer/2016/teamstat.htm?DB_OEM_ID=5800";
-      case 8:
-        return "http://www.ucsdtritons.com/fls/5800/stats/mtennis/2017/teamstat.htm?&DB_OEM_ID=5800";
-      case 10:
-        return "http://www.ucsdtritons.com/fls/5800/stats/mvolleyball/2017/teamstat.htm?DB_OEM_ID=5800";
-      case 11:
-        return "http://www.ucsdtritons.com/ViewArticle.dbml?DB_OEM_ID=5800&ATCLID=205687919&DB_OEM_ID=5800";
-
-      case 12:
-        return "http://www.ucsdtritons.com/fls/5800/stats/wbasketball/2016-17/teamstat.htm?DB_OEM_ID=5800";
-      case 16:
-        return "http://www.ucsdtritons.com/fls/5800/stats/wsoccer/2016/teamstat.htm?DB_OEM_ID=5800";
-      case 17: 
-        return "http://www.ucsdtritons.com/fls/5800/stats/softball/2017/teamstat.htm?DB_OEM_ID=5800";
-      case 19:
-        return "http://www.ucsdtritons.com/fls/5800/stats/wtennis/2017/teamstat.htm?DB_OEM_ID=5800";
-      case 21:
-        return "http://www.ucsdtritons.com/fls/5800/stats/wvolleyball/2016/teamstat.htm?DB_OEM_ID=5800";
-      case 22:
-        return "http://www.ucsdtritons.com/ViewArticle.dbml?&DB_OEM_ID=5800&ATCLID=211423801";
-    }
-  }
 
   onNavigationStateChange(navState) {
     this.setState({
@@ -111,27 +100,8 @@ export default class Sport extends Component {
      return (
        <Stats url = {this.props.stats} />
      )
-     /*
-      return (    
-        <View style={styles.container}>
-      <TouchableOpacity
-        disabled={!this.state.canGoBack}
-        onPress={this.onBack.bind(this)}
-        >
-        <View style={styles.topbar}>
-            <Image style={this.state.canGoBack ? styles.back : styles.back}
-            source = {require('./Back.png')}
-            />
-        </View>
-          </TouchableOpacity>
-          {this.getWebView()}
-
-      </View>
-      )
-      */
       default:
-
-      return null;
+        return null;
     };
   }
 
@@ -140,7 +110,17 @@ export default class Sport extends Component {
       id: this.props.gender
     })
   } 
-
+getSlider() {
+  return (
+<TabViewAnimated
+        style={styles.container}
+        navigationState={this.state}
+        renderScene={this._renderScene}
+        renderHeader={this._renderHeader}
+        onRequestChangeTab={this._handleChangeTab}
+       />
+  )
+}
   render() {
     return(
       <View style = {{flex:1}}>
@@ -164,14 +144,7 @@ export default class Sport extends Component {
           </View>
       </View> 
 
-       <TabViewAnimated
-        style={styles.container}
-        navigationState={this.state}
-        renderScene={this._renderScene}
-        renderHeader={this._renderHeader}
-        onRequestChangeTab={this._handleChangeTab}
- 
-      />
+      {this.getSlider()}       
 
       </View>
     );

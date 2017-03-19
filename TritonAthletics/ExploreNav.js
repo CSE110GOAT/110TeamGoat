@@ -41,6 +41,7 @@ export default class PracticeProject extends Component {
             default:
               return (<Sport navigator = {navigator} 
                              id = {route.id} 
+                             string = {route.sportid} 
                              name = {route.name} 
                              games = {<SportGames id = {route.sportid} />}
                              roster = {<Roster id = {route.sportid} />}

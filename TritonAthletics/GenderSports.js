@@ -70,7 +70,7 @@ export default class MenSports extends Component {
         case 22:
             return "http://www.ucsdtritons.com/ViewArticle.dbml?&DB_OEM_ID=5800&ATCLID=211423801";
         default:
-            return null
+            return "https://google.com"
 
     }
   }

@@ -59,7 +59,7 @@ export default class SportGames extends Component {
 
   render () {
     return (
-        <View>
+        <View style={styles.games}>
           <ScrollView>
             { this.state.games }
           </ScrollView>
@@ -70,6 +70,9 @@ export default class SportGames extends Component {
 }
 
 const styles = StyleSheet.create({
+  games: {
+    paddingBottom: 50
+  },
   overall_page: {
     flex: 1,
     marginTop: 10,
