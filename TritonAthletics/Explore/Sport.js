@@ -128,8 +128,8 @@ getSlider() {
        <View style = {styles.topBar}>
           <TabBarIOS
             barTintColor = "white"
-            tintColor = "black"
-            unselectedItemTintColor = "black"
+            tintColor = "navy"
+            unselectedItemTintColor = "navy"
             translucent = {true}
           >
             <Icon.TabBarItemIOS
@@ -153,6 +153,9 @@ getSlider() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  tabbar:{
+    backgroundColor: 'navy'
   },
   head: {
     width: 320,

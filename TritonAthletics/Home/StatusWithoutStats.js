@@ -50,7 +50,7 @@ export default class StatusWithoutStats extends Component {
     case '1':
       return <View style={styles.page}>
           <Stats url = {this.props.notes} />
-
+          
         </View>
 
     default:
