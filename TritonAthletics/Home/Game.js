@@ -10,11 +10,13 @@ import {
 import GamePreview from './GamePreview'
 import MyScene from './MyScene'
 import Status from './Status'
+import Header from '../Header'
+
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
-export default class PastGame extends Component{
+export default class Game extends Component{
     constructor(){
       super()
 

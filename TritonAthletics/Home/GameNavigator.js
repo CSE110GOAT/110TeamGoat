@@ -10,7 +10,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Header from '../Header'
-import PastGame from './Game'
+import Game from './Game'
 import GamePreview from './GamePreview'
 import StatusWithoutBoth from './StatusWithoutBoth'
 import StatusWithoutStats from './StatusWithoutStats'
@@ -103,7 +103,7 @@ export default class GameNavigator extends Component {
           </View>
         </TouchableOpacity>
         <View style = {styles.game}>
-          <PastGame
+          <Game
               sport = {this.props.sport}
                loc = {this.props.loc}
               team2 =  {this.props.team2}
