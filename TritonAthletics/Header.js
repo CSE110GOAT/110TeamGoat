@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   header_image: {
     width: window.width,
-    height: 70
+    height: 93
   }
 });
 

@@ -98,7 +98,7 @@ export default class GameNavigator extends Component {
     return (
       <View style = {styles.indivcontainer}>
         <TouchableOpacity activeOpacity={1} onPress={this.navBack.bind(this)}>
-          <View>
+          <View >
             <Header/>
           </View>
         </TouchableOpacity>
