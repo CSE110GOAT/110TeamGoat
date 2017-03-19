@@ -16,7 +16,12 @@ export default class Maps extends Component {
   };
 
   render() {
+
+    console.error = (error) => error.apply;
+    console.disableYellowBox = true;
+
     return (
+      
       <View style={{flex:1}}>
       <Text style={{textAlign: 'center'}}>{this.props.loc}</Text>
       <MapView
