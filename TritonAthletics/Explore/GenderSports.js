@@ -17,7 +17,7 @@ const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
 import Roster from './Roster';
-import Header from './Header';
+import Header from '../Header';
 import SportIcon from './SportIcon';
 import Icon from 'react-native-vector-icons/Ionicons';
 

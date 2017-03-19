@@ -13,7 +13,7 @@ import {
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
-import Header from "./Header.js"
+import Header from "../Header.js"
 export default class Social extends Component {
   constructor(props) {
     super(props);

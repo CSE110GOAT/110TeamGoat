@@ -15,12 +15,10 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 const myIcon = (<Icon name="rocket" size={30} color="#900" />)
 
-import HomePage from './HomePage'
-import HomeNav from './HomeNav'
-import ExplorePage from './ExplorePage.js'
-import ExploreNav from './ExploreNav.js'
-import SocialPage from './SocialPage'
-import NewsPage from './NewsPage'
+import HomeNav from './Home/HomeNav'
+import ExploreNav from './Explore/ExploreNav'
+import SocialPage from './Social/SocialPage'
+import NewsPage from './News/NewsPage'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');

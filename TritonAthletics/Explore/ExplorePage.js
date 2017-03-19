@@ -11,7 +11,7 @@ import {
   Dimensions
 } from 'react-native';
 
-import Header from './Header';
+import Header from '../Header';
 
 var window = Dimensions.get('window');
 
@@ -42,7 +42,7 @@ export default class ExplorePage extends Component {
 
         <TouchableHighlight style = {styles.button} onPress = {this.navExploreMen.bind(this)}>
             <Image
-              source={require('./baseball.png')}
+              source={require('./men.png')}
               style = {{
                 height: 285,
                 width: window.width
@@ -52,7 +52,7 @@ export default class ExplorePage extends Component {
 
         <TouchableHighlight style = {styles.button}  onPress = {this.navExploreWomen.bind(this)}>
           <Image
-            source={require('./tennis.png')}
+            source={require('./women.png')}
             style = {{
               height: 275,
               width: window.width,

@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { AppRegistry, Text, ScrollView, View, StyleSheet, Image, WebView, Linking, TouchableOpacity, TouchableHighlight, TabBarIOS } from 'react-native';
-import Header from './Header.js';
+import Header from '../Header.js';
 import Article from './Article.js';
 
 const Dimensions = require('Dimensions');
