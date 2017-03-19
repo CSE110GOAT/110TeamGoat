@@ -75,7 +75,7 @@ export default class MenSports extends Component {
     }
   }
   sportButton(idNum, idString, name, gender, pic) {
-      return ( 
+      return (
           <TouchableHighlight onPress = {() => {
                                 this.props.navigator.push({
                                     id: {idNum},
@@ -233,9 +233,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     color: 'black',
-    fontSize: 18,
-    marginLeft: 37
-
+    fontSize: 24,
+    marginLeft: 37,
+    fontFamily:"HelveticaNeue-CondensedBold"
   },
 
   pic: {

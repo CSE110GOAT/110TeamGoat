@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {
   AppRegistry,
@@ -20,7 +19,7 @@ export default class Header extends Component{
       <View style={styles.container}>
         <Image source={require('./header.png')} style={styles.header_image}/>
       </View>
-      ); 
+      );
     }
   }
 
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
   },
   header_image: {
     width: window.width,
-    height: 70 
+    height: 70
   }
 });
 

@@ -12,7 +12,7 @@ import {
   Navigator
 } from 'react-native'
 
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const myIcon = (<Icon name="rocket" size={30} color="#900" />)
 
 import HomeNav from './Home/HomeNav'
@@ -27,18 +27,18 @@ export default class Pages extends Component{
 
     state = {
         page: 'home'
-    } 
+    }
 
    render() {
     return (
       <TabBarIOS
         barTintColor = "white"
-        tintColor= "black"
-        unselectedItemTintColor = "black"
+        tintColor= "navy"
+        unselectedItemTintColor = "navy"
          >
           <Icon.TabBarItemIOS
-            iconName="ios-home-outline"
-            selectedIconName = "ios-home"
+            iconName="home-outline"
+            selectedIconName = "home"
             selected={this.state.page === 'home'}
             onPress={() => {
             this.setState({
@@ -49,8 +49,8 @@ export default class Pages extends Component{
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            iconName="ios-basketball-outline"
-            selectedIconName = "ios-basketball"
+            iconName="magnify"
+            selectedIconName = "magnify"
             selected={this.state.page === 'explore'}
             onPress={() => {
             this.setState({
@@ -61,8 +61,8 @@ export default class Pages extends Component{
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            iconName="ios-people-outline"
-            selectedIconName = "ios-people"
+            iconName="facebook"
+            selectedIconName = "facebook"
             selected={this.state.page === 'social'}
             onPress={() => {
             this.setState({
@@ -73,8 +73,8 @@ export default class Pages extends Component{
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            iconName="ios-information-circle-outline"
-            selectedIconName = "ios-information-circle"
+            iconName="newspaper"
+            selectedIconName = "newspaper"
             selected={this.state.page === 'news'}
             onPress={() => {
             this.setState({
