@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   item:{
     fontFamily:"HelveticaNeue-Thin",
     padding: 12,
+    fontSize:16,
     borderColor:'grey',
     borderTopWidth:0,
     borderBottomWidth:0,

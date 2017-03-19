@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 62,
    textAlign:'center',
-   fontSize: 24
+   fontSize: 18
 
   },
   sport:{

@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     fontFamily:"HelveticaNeue-Thin",
     textAlign:'center',
-    fontSize: 18,
+    fontSize: 16,
     padding:10
   },
   sport:{
@@ -87,23 +87,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold'
   },
-  sport_image: {
-    width: 25,
-    height: 50,
-    marginTop: 15
-  },
   time: {
     fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily:"HelveticaNeue-CondensedBold"
-  },
-  logo: {
-    width: 35,
-    height: 35,
-    marginTop: 10,
-    marginLeft: 15,
-    justifyContent: 'center'
   }
 });
 

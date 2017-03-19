@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor:'navy',
     color:'white',
     borderColor: 'white',
-    borderWidth: 2,
+    borderWidth: 1.5,
     padding:6
   },
   sport_image: {
