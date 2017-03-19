@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'center',
     flexDirection: 'row',
-    padding:1
   },
   logo_item:{
     alignItems: 'center',
@@ -66,13 +65,14 @@ const styles = StyleSheet.create({
     backgroundColor:'navy',
     color:'white',
     borderColor: 'white',
-    borderWidth: 0.25,
+    borderWidth: 2,
+    padding:6
   },
   sport_image: {
     width: 25,
     height: 50,
     alignItems: 'center',
-    marginTop: 15
+    marginTop: 15,
   },
   logo: {
     width: window.width,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     borderColor: 'grey',
     borderWidth: 0,
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   }
 });
 
