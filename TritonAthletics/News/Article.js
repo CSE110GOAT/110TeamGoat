@@ -32,12 +32,10 @@ const Article = (props) => {
         }}
       >
         <View>
-          <Text style={styles.sport}> {props.time} -- {props.headline}</Text>
-
-          <View style={styles.container}>
+        <Text style={styles.sport}> {props.time} -- {props.headline}</Text>
+          <View style={styles.articles}>
             <View style={styles.logo_item}>
               <Image source={{uri: props.picture}} style={styles.logo}/>
-
             </View>
           </View>
         </View>
@@ -47,55 +45,34 @@ const Article = (props) => {
 
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
+
+  },
+  articles: {
     flex:1,
     backgroundColor: 'white',
     justifyContent: 'center',
     flexDirection: 'row',
-    borderColor: 'grey',
-    borderWidth: 0
+    padding:1
   },
   logo_item:{
     alignItems: 'center',
-    height: 200
-  },
-  item:{
-    fontFamily:"Menlo",
-    borderWidth: 0.0,
-    borderColor: 'grey',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 150,
-    textAlign:'center'
+    height: 200,
   },
   sport:{
-    fontFamily: 'HelveticaNeue-Thin',
-    //backgroundColor: 'gold',
-    fontWeight: 'bold',
-    borderColor: 'grey',
-    borderWidth: 0.0,
-    textAlign:'center'
+    fontFamily: 'HelveticaNeue-CondensedBold',
+    textAlign:'center',
+    fontSize:18,
+    backgroundColor:'navy',
+    color:'white',
+    borderColor: 'white',
+    borderWidth: 0.25,
   },
   sport_image: {
     width: 25,
     height: 50,
     alignItems: 'center',
     marginTop: 15
-  },
-  source: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  headline: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  summary: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    textAlign:'center'
   },
   logo: {
     width: window.width,
