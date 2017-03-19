@@ -20,7 +20,7 @@ export default class Status extends Component {
        id: this.props.gender
      })
    }
-   
+
   state = {
     index: 0,
     sport: this.props.stats,
@@ -57,7 +57,7 @@ export default class Status extends Component {
 
     case '2':
       return <View style={styles.page}>
-          <Stats url = {this.props.notes} />
+          <Stats url = {this.props.notes} scale= {true}/>
 
         </View>
 

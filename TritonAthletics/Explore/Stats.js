@@ -25,6 +25,7 @@ export default class Stats extends Component {
         <WebView
           ref={WEBVIEW_REF}
           style={{flex: 1}}
+          scalesPageToFit={this.props.scale}
           onNavigationStateChange=
             {this.onNavigationStateChange.bind(this)}
           source={{uri: this.props.url }}

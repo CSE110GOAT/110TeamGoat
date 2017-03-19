@@ -47,7 +47,7 @@ export default class NavFuture extends Component {
               } else {
                 return (<StatusWithoutStats
                     sport = {this.props.sport}
-                   location =  {this.props.loc}
+                   loc =  {this.props.loc}
                    team2 =  {this.props.team2}
                     date =  {this.props.date}
                     time =  {this.props.time}

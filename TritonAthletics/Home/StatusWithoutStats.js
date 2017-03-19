@@ -49,8 +49,8 @@ export default class StatusWithoutStats extends Component {
 
     case '1':
       return <View style={styles.page}>
-          <Stats url = {this.props.notes} />
-          
+          <Stats url = {this.props.notes} scale= {true}/>
+
         </View>
 
     default:
