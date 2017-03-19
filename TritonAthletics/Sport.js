@@ -1,3 +1,4 @@
+const WEBVIEW_REF = "WEBVIEW_REF";
 import React, { Component, PropTypes } from 'react';
 import {
   AppRegistry,
@@ -7,6 +8,7 @@ import {
   ScrollView,
   Image,
   TouchableHighlight,
+  TouchableOpacity,
   Navigator,
   TabBarIOS,
   Linking,
@@ -16,7 +18,7 @@ import Roster from './Roster';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
 import SportGames from './SportGames';
-//import Roster from './Roster';
+import Stats from './Stats';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Sport extends Component {
@@ -74,6 +76,24 @@ export default class Sport extends Component {
     }
   }
 
+  onNavigationStateChange(navState) {
+    this.setState({
+      canGoBack: navState.canGoBack
+    });
+  }
+  getWebView() {
+    return (
+      <WebView
+          ref={WEBVIEW_REF}
+          onNavigationStateChange=
+            {this.onNavigationStateChange.bind(this)}
+          source={{uri: this.props.stats }}
+          />
+    )
+  }
+  onBack() {
+    this.refs[WEBVIEW_REF].goBack();
+  }
   _renderScene = ({ route }) => {
 
   switch (route.key) {
@@ -88,11 +108,29 @@ export default class Sport extends Component {
         </View>
 
     case '3':
-      return <View style={styles.page}>
-        {this.props.stats}
+     return (
+       <Stats url = {this.props.stats} />
+     )
+     /*
+      return (    
+        <View style={styles.container}>
+      <TouchableOpacity
+        disabled={!this.state.canGoBack}
+        onPress={this.onBack.bind(this)}
+        >
+        <View style={styles.topbar}>
+            <Image style={this.state.canGoBack ? styles.back : styles.back}
+            source = {require('./Back.png')}
+            />
         </View>
+          </TouchableOpacity>
+          {this.getWebView()}
 
-    default:
+      </View>
+      )
+      */
+      default:
+
       return null;
     };
   }

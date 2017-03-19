@@ -40,6 +40,40 @@ export default class MenSports extends Component {
       );
   }
 
+  findStats( id ) {
+    switch( id ) {
+        case 0:
+            return "http://www.ucsdtritons.com/fls/5800/stats/baseball/2017/teamstat.htm?DB_OEM_ID=5800";
+        case 1:
+            return "http://www.ucsdtritons.com/fls/5800/stats/mbasketball/2016-17/teamstat.htm?DB_OEM_ID=5800";
+        case 4:
+            return "http://www.ucsdtritons.com/fls/5800/stats/mgolf/2016-17/teamstat.htm?DB_OEM_ID=5800";
+        case 6:
+            return "http://www.ucsdtritons.com/fls/5800/stats/msoccer/2016/teamstat.htm?DB_OEM_ID=5800";
+        case 8:
+            return "http://www.ucsdtritons.com/fls/5800/stats/mtennis/2017/teamstat.htm?&DB_OEM_ID=5800";
+        case 10:
+            return "http://www.ucsdtritons.com/fls/5800/stats/mvolleyball/2017/teamstat.htm?DB_OEM_ID=5800";
+        case 11:
+            return "http://www.ucsdtritons.com/ViewArticle.dbml?&DB_OEM_ID=5800&ATCLID=211165004";
+
+        case 12:
+            return "http://www.ucsdtritons.com/fls/5800/stats/wbasketball/2016-17/teamstat.htm?DB_OEM_ID=5800";
+        case 16:
+            return "http://www.ucsdtritons.com/fls/5800/stats/wsoccer/2016/teamstat.htm?DB_OEM_ID=5800";
+        case 17:
+            return "http://www.ucsdtritons.com/fls/5800/stats/softball/2017/teamstat.htm?DB_OEM_ID=5800";
+        case 19:
+            return "http://www.ucsdtritons.com/fls/5800/stats/wtennis/2017/teamstat.htm?DB_OEM_ID=5800";
+        case 21:
+            return "http://www.ucsdtritons.com/fls/5800/stats/wvolleyball/2016/teamstat.htm?DB_OEM_ID=5800";
+        case 22:
+            return "http://www.ucsdtritons.com/ViewArticle.dbml?&DB_OEM_ID=5800&ATCLID=211423801";
+        default:
+            return null
+
+    }
+  }
   sportButton(idNum, idString, name, gender, pic) {
       return ( 
           <TouchableHighlight onPress = {() => {
@@ -49,6 +83,7 @@ export default class MenSports extends Component {
                                     sportid: idString,
                                     name: <Text>{name}</Text>,
                                     gender: <Text>{gender}</Text>,
+                                    stats: this.findStats(idNum)
                                 })
                               }}>
             <View>

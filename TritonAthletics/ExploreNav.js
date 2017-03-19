@@ -43,8 +43,8 @@ export default class PracticeProject extends Component {
                              id = {route.id} 
                              name = {route.name} 
                              games = {<SportGames id = {route.sportid} />}
-                             roster = {<Roster id = {route.sportId} />}
-                             stats = {<Stats id = {route.sportId} />}
+                             roster = {<Roster id = {route.sportid} />}
+                             stats = {route.stats}
                              gender = {route.gender}
                              />);
           }

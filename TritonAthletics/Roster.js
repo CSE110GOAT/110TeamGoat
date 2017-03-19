@@ -1,171 +1,145 @@
-import React, { Component, PropTypes } from 'react';
+'use strict';
+
+import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
-  View,
   ScrollView,
-  ListView,
+  View,
+  StyleSheet,
   Image,
-  TouchableHighlight,
   Navigator,
+  TouchableHighlight,
   TabBarIOS
+
 } from 'react-native';
 
-import RosterIcon from './RosterIcon.js';
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
+import RosterIcon from "./RosterIcon";
 
-export default class MSoccerRoster extends Component {
+export default class Roster extends Component {
 
-  constructor() {
-    super()
-    this.state = {
-      size: 0,
-      names: [],
-      fullBios: [],
-    }
+  constructor(props) {
+     super()
+     this.state = {
+       games: [],
+       size:0,
+       imgUrl: ""
+     }
 
-    { this.getRoster() }
-  }
+     { this.getGame() }
+   }
 
-  getRoster() {
-     fetch('https://goatbackend110.appspot.com/static/rosters.json')
-        .then((response) => response.json())
-        .then((responseJson) => {
-          this.setState({
-            size: Object.keys(responseJson.rosters["6"]).length
-          })
-
-          for (var i = 0; i < this.state.size; i++) {
-            this.setState({
-              names: this.state.names.concat([
-                responseJson.rosters["6"][i][0]
-              ]),
-              fullBios: this.state.fullBios.concat([
-                responseJson.rosters["6"][i][6]
-              ])
-            });
-          }
-        })
-        .catch((ignore) => {
-          console.error(error);
-        });
-  }
-
-
-  render() {
-    var roster = []
-
-    for (let i = 0; i < (this.state.size - (this.state.size % 3)); i += 3) {
-      var url1 = "https://goatbackend110.appspot.com/static/rosters/6/" + i + ".png"
-      var url2 = "https://goatbackend110.appspot.com/static/rosters/6/" + (i+1) + ".png"
-      var url3 = "https://goatbackend110.appspot.com/static/rosters/6/" + (i+2) + ".png"
-
-      roster.push(
-        <View style = {styles.roster_row} key = {i}>
-          <TouchableHighlight>
-            <View style = {styles.iconLeft} key = {i.toString()}>
-              <RosterIcon
-                pic = {url1}
-                name = {this.state.names[i]}
-                bio = {"http://" + this.state.fullBios[i]}
-              />
-            </View>
-          </TouchableHighlight>
-
-          <TouchableHighlight>
-            <View style = {styles.icon} key = {(i+1).toString()}>
-              <RosterIcon
-                pic = {url2}
-                name = {this.state.names[i+1]}
-                bio = {"http://" + this.state.fullBios[i+1]}
-              />
-            </View>
-          </TouchableHighlight>
-
-          <TouchableHighlight>
-            <View style = {styles.iconRight} key = {(i+2).toString()}>
-              <RosterIcon
-                pic = {url3}
-                name = {this.state.names[i+2]}
-                bio = {"http://" + this.state.fullBios[i+2]}
-              />
-            </View>
-          </TouchableHighlight>
-        </View>
+   getPlayer(roster, i, position) {
+     return  (
+        <TouchableHighlight>
+          <View style={position} key={i.toString()}>
+            <RosterIcon
+              pic={this.state.imgUrl + i + ".png"}
+              name={roster[i][0]}
+              bio={"http://" + roster[i][6]}
+            />
+          </View>
+        </TouchableHighlight>
       );
+   }
+   getGame() {
+     fetch('https://goatbackend110.appspot.com/static/rosters.json')
+       .then((response) => response.json())
+       .then((responseJson) => {
 
-    }
+         var roster = responseJson.rosters[this.props.id]
+         var size = Object.keys(roster).length
+         var game = []
+         this.setState({
+           imgUrl: "https://goatbackend110.appspot.com/static/rosters/" + this.props.id + "/"
+         })
 
-    if (this.state.size % 3 != 0) {
-      if (this.state.size % 3 == 1) {
-        var i = (this.state.size - 1)
-        var url1 = "https://goatbackend110.appspot.com/static/rosters/6/" + i + ".png"
-        roster.push(
-          <View style = {styles.roster_row} key = {i}>
-            <TouchableHighlight>
-              <View style = {styles.iconLeft} key = {i.toString()}>
-                <RosterIcon
-                  pic = {url1}
-                  name = {this.state.names[i]}
-                  bio = {"http://" + this.state.fullBios[i]}
-                />
-              </View>
-            </TouchableHighlight>
-          </View>
-        );
-      }
+         for (var i = 0; i < (size - (size % 3)); i += 3) {
+           game.push(
+             <View style={styles.roster_row} key={i}>
+               {this.getPlayer(roster, i, styles.iconLeft)}
+               {this.getPlayer(roster, i + 1, styles.icon)}
+               {this.getPlayer(roster, i + 2, styles.iconRight)}
+             </View>
+           );
+         }
+         if (size % 3 != 0) {
+           if (size % 3 == 1) {
+             game.push(
+               <View style={styles.roster_row} key={i}>
+                 {this.getPlayer(roster, size - 1, styles.iconLeft)}
+               </View>
+             );
+           }
 
-      else {
-        var i = (this.state.size - 2)
-        var url1 = "https://goatbackend110.appspot.com/static/rosters/6/" + i + ".png"
-        var url2 = "https://goatbackend110.appspot.com/static/rosters/6/" + (i+1) + ".png"
+           else {
+             game.push(
+               <View style={styles.roster_row} key={i}>
+                 {this.getPlayer(roster, size - 2, styles.iconLeft)}
+                 {this.getPlayer(roster, size - 1, styles.icon)}
+               </View>
+             );
+           }
+         }
 
-        roster.push(
-          <View style = {styles.roster_row} key = {i}>
-            <TouchableHighlight>
-              <View style = {styles.iconLeft} key = {i.toString()}>
-                <RosterIcon
-                  pic = {url1}
-                  name = {this.state.names[i]}
-                  bio = {"http://" + this.state.fullBios[i]}
-                />
-              </View>
-            </TouchableHighlight>
+         this.setState({
+           games: game,
+           size: size
+         })
 
-            <TouchableHighlight>
-              <View style = {styles.icon} key = {(i+1).toString()}>
-                <RosterIcon
-                  pic = {url2}
-                  name = {this.state.names[i+1]}
-                  bio = {"http://" + this.state.fullBios[i+1]}
-                />
-              </View>
-            </TouchableHighlight>
+       }).catch((error) => {
+         console.error(error);
+       });
+   }
 
-          </View>
-        );
-      }
-    }
-
+  render () {
     return (
-      <View style = {styles.overall_page}>
-        <ScrollView>{ this.state.roster }</ScrollView>
-      </View>
+        <View style={styles.roster}>
+          <ScrollView>
+            { this.state.games }
+          </ScrollView>
+        </View>
 
-    );
-  }
-  };
+      );
+    }
+}
 
-  const styles = StyleSheet.create({
+const styles = StyleSheet.create({
+  roster: {
+    paddingBottom: 50
+  },
   overall_page: {
     flex: 1,
     marginTop: 10,
     paddingBottom: 50
   },
+  
+  container: {
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    width: window.width,
+    height: 60,
+    justifyContent: 'center'
+  },
 
+  item: {
+    flexDirection: 'row',
+    fontFamily:"HelveticaNeue-Thin",
+    textAlign:'center',
+    fontSize: 16,
+  },
+
+  time: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  
   roster_row: {
     flexDirection: 'row',
   },
@@ -182,4 +156,4 @@ export default class MSoccerRoster extends Component {
     paddingLeft: 3
   }
 
-  });
+});
