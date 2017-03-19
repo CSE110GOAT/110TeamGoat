@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, AppRegistry, WebView, TouchableOpacity } from '
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 import Map from './Map'
 
-import Stats from './ExplorePage/Stats';
+import Stats from '../Explore/Stats';
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');

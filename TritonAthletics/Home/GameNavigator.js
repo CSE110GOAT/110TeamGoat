@@ -9,9 +9,8 @@ import {
   TouchableHighlight,
   TouchableOpacity
 } from 'react-native';
-import Header from './Header'
+import Header from '../Header'
 import PastGame from './Game'
-import NavBar from './NavBar'
 import GamePreview from './GamePreview'
 import StatusWithoutBoth from './StatusWithoutBoth'
 import StatusWithoutStats from './StatusWithoutStats'

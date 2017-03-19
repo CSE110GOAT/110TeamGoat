@@ -12,10 +12,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-
+import Header from '../Header'
 import GamePreview from './GamePreview'
-import Header from './Header'
-import NavBar from './NavBar'
 import GameNavigator from './GameNavigator'
 import FutureGame from './FutureGame'
 import Game from './Game'

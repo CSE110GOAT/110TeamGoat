@@ -20,8 +20,7 @@ import {
 
 import MyScene from './MyScene'
 import GamePreview from './GamePreview'
-import Header from './Header'
-import NavBar from './NavBar'
+import Header from '../Header'
 import GameNavigator from './GameNavigator'
 import NavFuture from './NavFuture'
 
