@@ -28,7 +28,7 @@ export default class FutureGame extends Component {
         <Text style ={styles.sport}> {this.props.sport}</Text>
         </View>
         <View style = {styles.container}>
-          <Text style = {styles.item}>  UCSD {"\t"}vs.{"\t"}{this.props.team2}</Text>
+          <Text style = {styles.item}>UCSD{"\t"}vs.{"\t"}{this.props.team2}</Text>
           <Text style = {styles.time}>{this.props.date} {this.props.time}</Text>
         </View>
       </View>

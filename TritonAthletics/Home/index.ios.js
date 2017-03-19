@@ -28,10 +28,9 @@ import GamePreview from './GamePreview'
 export default class TrialProject extends Component {
   constructor(){
     super()
-    this.state = {
-      numGames: 0,
-      onStart: true
-    }
+
+
+
   }
 
 

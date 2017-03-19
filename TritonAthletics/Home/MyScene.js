@@ -55,7 +55,7 @@ navTournament(){
       .then((responseJson) => {
         responseJson = responseJson.Games;
      //  var size =  Object.keys(responseJson).length
-       for(var i = 0; i < 30 ; i++){
+       for(var i = 50; i < 100 ; i++){
          var oneGame = responseJson[String(i)];
            var gender = oneGame[12]
            var cont = st.container1

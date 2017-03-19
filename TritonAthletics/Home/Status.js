@@ -14,6 +14,13 @@ export default class Status extends Component {
 
   }
 
+
+  navBack () {
+     this.props.navigator.pop({
+       id: this.props.gender
+     })
+   }
+   
   state = {
     index: 0,
     sport: this.props.stats,
@@ -76,7 +83,7 @@ export default class Status extends Component {
       />
     );
   }
-};
+}
 
 const styles = StyleSheet.create({
   container: {
